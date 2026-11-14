@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>상표 유사 체크 보드 | EQAI Contest</title>
+<meta name="theme-color" content="#0a0a23">
+<meta name="description" content="외관·호칭·관념 3축을 병렬로 평가하고 종합 메모를 만듭니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;800&family=Orbitron:wght@600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="agent-shell.css">
+</head>
+<body>
+<div class="top"><a href="index.html">← 아이디어 뱅크</a><span class="badge-off">AI 연결 끊김</span></div>
+<main id="app" data-app-id="tm-similarity-board"></main>
+<div class="toast" id="toast">AI 연결 끊김 — 로컬 시연 모드로 전략·실행 플로우를 표시합니다. API 연결 시 동일 UI에서 즉시 가동됩니다.</div>
+<script>
+window.AGENT_CONFIG = {"id":"tm-similarity-board","icon":"⚖️","title":"상표 유사 체크 보드","name":"MarkBalance","role":"상표 유사 판단 에이전트","mission":"외관·호칭·관념 3축을 병렬로 평가하고 종합 메모를 만듭니다.","domain":"상표","layout":"board","accent":"violet","inputLabel":"출원 표장 / 대비 표장","placeholder":"예: 출원 “MOIP AI” vs 선등록 “MOIP” (류9)","tools":["외관","호칭","관념","저명성"],"strategies":[{"detail":"문자·도형 요소를 분리합니다.","title":"표장 정규화","log":"normalize marks"},{"detail":"축별 가중치와 관찰 순서를 정합니다.","title":"3축 스코어 플랜","log":"weight axes"},{"detail":"유사상품 여부를 함께 봅니다.","title":"상품 관계 점검","log":"goods relation"}],"executions":[{"detail":"자모·배치·도안 유사","title":"외관 관찰","log":"sight check"},{"detail":"발음·의미 연상","title":"호칭·관념","log":"sound idea"},{"detail":"유사/비유사 가설","title":"종합 판정 슬롯","log":"verdict slot"}],"deliverables":[{"title":"3축 보드","sample":"외관: 부분 유사\n호칭: 핵심 동일 가능\n관념: 약함\n입력: {{seed}}","hint":"체크 결과"},{"title":"상품 관계","sample":"류9 소프트웨어 인접 가능","hint":"류/유사군"},{"title":"판단 메모","sample":"호칭 유사 + 상품 관련 시 전체 유사 검토 강화","hint":"가설"}],"sampleSeed":null};
+</script>
+<script src="agent-shell.js"></script>
+</body>
+</html>
