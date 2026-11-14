@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>기재불비 갭 파인더 | EQAI Contest</title>
+<meta name="theme-color" content="#0a0a23">
+<meta name="description" content="청구-명세서 정합, 명확성·지지 공백을 탐지 리스트로 올립니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;800&family=Orbitron:wght@600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="agent-shell.css">
+</head>
+<body>
+<div class="top"><a href="index.html">← 아이디어 뱅크</a><span class="badge-off">AI 연결 끊김</span></div>
+<main id="app" data-app-id="description-gap"></main>
+<div class="toast" id="toast">AI 연결 끊김 — 로컬 시연 모드로 전략·실행 플로우를 표시합니다. API 연결 시 동일 UI에서 즉시 가동됩니다.</div>
+<script>
+window.AGENT_CONFIG = {"id":"description-gap","icon":"🔍","title":"기재불비 갭 파인더","name":"GapFinder","role":"기재·지지 감사 에이전트","mission":"청구-명세서 정합, 명확성·지지 공백을 탐지 리스트로 올립니다.","domain":"특실","layout":"console","accent":"emerald","inputLabel":"청구항 / 명세서 발췌","placeholder":"예: 청구 “탄성계수 최적화 모듈” — 명세서 정의 부재…","tools":["명확성","지지","실시가능","용어 일관"],"strategies":[{"detail":"청구 핵심 용어를 목록화합니다.","title":"용어 추출","log":"extract terms"},{"detail":"명세서 출현·정의를 매칭합니다.","title":"지지 매칭","log":"match support"},{"detail":"위험도 순으로 정렬합니다.","title":"갭 스코어링","log":"score gaps"}],"executions":[{"detail":"모호 표현 표시","title":"명확성 플래그","log":"clarity flags"},{"detail":"정의 부재 용어","title":"지지 미약 목록","log":"weak support"},{"detail":"기재 보강 아이디어","title":"보정·보강 제안","log":"fix tips"}],"deliverables":[{"title":"갭 리스트","sample":"1) 미정의 기능 용어\n2) 수치 범위 근거 부재\n{{seed}}","hint":"우선순위"},{"title":"명확성","sample":"· ","hint":"플래그"},{"title":"보강 제안","sample":"정의 문단 추가 · 실시예 수치","hint":"액션"}],"sampleSeed":null};
+</script>
+<script src="agent-shell.js"></script>
+</body>
+</html>
